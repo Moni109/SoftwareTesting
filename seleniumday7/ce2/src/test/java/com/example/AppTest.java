@@ -41,7 +41,7 @@ public class AppTest
 
 		js.executeScript("window.scrollBy(0,500)");
 		
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Reliance Industries Ltd.")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[14]/div[2]/div[2]/div[2]/div[1]/div/h1")));
 		WebElement reliance = driver.findElement(By.linkText("Reliance Industries Ltd."));
 		
 		if(reliance.isDisplayed()){
@@ -52,7 +52,7 @@ public class AppTest
 		}
 
 		driver.findElement(By.linkText("Mutual Funds")).click();
-		Thread.sleep(1000);
+		wait.withTimeout(Duration.ofSeconds(30));
 
 		js.executeScript("window.scrollBy(0,500)");
 

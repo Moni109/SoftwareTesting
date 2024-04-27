@@ -16,13 +16,13 @@ public class AppTest
     @BeforeTest
     public void shouldbetestedBefore(){
         driver = new ChromeDriver();
+		driver.get("https://economictimes.indiatimes.com/et-now/results/");
         
     }
     @Test
     public void shouldbetested() throws InterruptedException
     {
 		Actions actions = new Actions(driver);
-		driver.get("https://economictimes.indiatimes.com/et-now/results/");
 		driver.findElement(By.linkText("Mutual Funds")).click();
 		WheelInput.ScrollOrigin scrollOrigin = WheelInput.ScrollOrigin.fromViewport(10, 10);
 		actions.scrollFromOrigin(scrollOrigin, 0, 500).perform();

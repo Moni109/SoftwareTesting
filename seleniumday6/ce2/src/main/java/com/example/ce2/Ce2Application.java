@@ -21,7 +21,7 @@ public class Ce2Application {
 		driver.get("https://www.moneycontrol.com/");
 
 		driver.manage().window().maximize();
-
+		
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("search_str")));
